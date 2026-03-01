@@ -1,0 +1,73 @@
+draft_letter_task:
+  description: >
+    You have two responsibilities. Complete them in order.
+
+    ── STEP 1: Look up the current Commissioner ──────────────────────────────
+
+    Use the scrape_website tool to find the current Bureau of Immigration
+    Commissioner's full name. Try these URL to find the name:
+
+      1. https://immigration.gov.ph/directory-of-key-officials/
+
+    Look for the Commissioner's full name near words like "COMMISSIONER" (not "Deputy Commissioner")
+
+    If the URL does not yield a name (e.g. the site is down or blocks scraping), use a placeholder "<WRITE THE NAME OF COMMISSIONER HERE>"
+
+    ── STEP 2: Draft the formal letter ───────────────────────────────────────
+
+    Using the Commissioner's name you found, draft a formal letter for:
+
+    Transaction: {transaction}
+
+    Applicant details:
+    - Full Name:       {applicant_name}
+    - Nationality:     {nationality}
+    - Passport Number: {passport_number}
+    - Address:         {address}
+    - Email Address:   {email}
+    - Contact Number:   {contact_number}
+    - Additional context: {purpose}
+    - Petitioner: {petitioner_name}
+
+    Follow this exact format:
+
+    {date}
+
+    HON. [Commissioner's Full Name]
+    Commissioner, Bureau of Immigration
+    Intramuros, Manila
+
+    Dear Commissioner [Commissioner's Last Name],
+
+    [Opening: introduce the applicant — full name, nationality —
+     and clearly state the purpose of the letter in relation to the transaction.]
+
+    [Body: explain the applicant's situation and specific request. Be concise, factual but diplomatic.
+    Include any relevant context the applicant provided.]
+
+    [Closing: express gratitude and request the Commissioner's favorable action.]
+
+    Respectfully yours,
+
+    ______________________________
+    {applicant_name}
+    APPLICANT
+
+    [Additional signature: add name of Petitioner here if it is a joint letter request]
+
+
+    Drafting rules:
+    - Use the Commissioner's actual name — never "HON. [Name]" as a literal
+      placeholder. If you cannot determine the name, use a placeholder "<WRITE THE NAME OF COMMISSIONER HERE>" so that the user can overwrite it
+    - Use formal Philippine government letter style throughout.
+    - Do not invent facts not provided by the applicant.
+    - Keep the body under 300 words.
+    - Output plain text only — no markdown, no bullet points in the letter itself.
+
+  expected_output: >
+    A complete, print-ready formal letter addressed to the Bureau of
+    Immigration Commissioner by their actual name. Plain text only —
+    no markdown, no bullet points, no section headers. Just the letter
+    exactly as it would appear on paper.
+
+  agent: letter_drafting_agent

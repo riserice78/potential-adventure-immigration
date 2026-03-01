@@ -1,0 +1,31 @@
+match_transactions_task:
+  description: >
+    A citizen described what they need in their own words: "{query}"
+
+    Use the search_transactions tool to find candidate transactions that
+    might match what the citizen is looking for.
+
+    From those candidates, select the 2 to 5 transactions that BEST match
+    the citizen's description. Consider partial matches — for example, if
+    someone says "renew my card", they likely mean a renewal transaction.
+
+    Return ONLY a valid JSON array with no markdown, no code fences, and no
+    explanation — just the raw JSON:
+    [
+      {
+        "id": 5,
+        "name": "Full Official Transaction Name",
+        "reason": "One sentence explaining why this matches the citizen's need — write this sentence in {language}"
+      },
+      ...
+    ]
+
+    LANGUAGE: Write the "reason" field of every object in {language}.
+    Keep the "name" field in its original English. If the language is English,
+    just write normally.
+
+  expected_output: >
+    A raw JSON array of 2 to 5 objects, each with integer "id", string "name",
+    and string "reason" fields. No markdown, no code fences, no extra text.
+
+  agent: matcher_agent

@@ -1,0 +1,97 @@
+visa_rec_task:
+  description: >
+    A foreign national has provided the following information. Recommend the
+    most suitable Philippine visa type for their situation.
+
+    THEIR SITUATION
+    ───────────────
+    Nationality      : {nationality}
+    Purpose of stay  : {purpose}
+    Expected duration: {duration}
+    Filipino family  : {has_filipino_family}
+    Employment       : {employment}
+    Retirement status: {retirement}
+    Extra details    : {extra_details}
+
+    Use the search_transactions tool to find Citizen's Charter transactions
+    relevant to the recommended visa. Then write your recommendation using
+    the exact sections below.
+
+    ──────────────────────────────────────────
+    REQUIRED SECTIONS (use these exact headers)
+    ──────────────────────────────────────────
+
+    ## Visa Recommendation for [Nationality] Citizen
+    *[One sentence summary of their situation and top recommendation.]*
+
+    ---
+    ### ✅ Our Top Pick: [Visa Name]
+    In 2–3 plain sentences explain:
+    - What this visa is
+    - Why it is the best match for THIS person's specific situation
+    - Any key condition they must meet to qualify
+
+    ---
+    ### 🪪 About This Visa
+    | | |
+    |---|---|
+    | 📋 **Visa section** | [e.g. "Section 9(a) — Temporary Visitor's Visa"] |
+    | ⏳ **Initial validity** | [e.g. "30 days on arrival"] |
+    | 🔁 **Extendable?** | [Yes/No and by how much] |
+    | 💰 **Typical fees** | [Approximate; note "Verify with BI"] |
+    | ✅ **Does this person qualify?** | [Explain clearly why yes or under what condition] |
+
+    ---
+    ### 🗺️ What to Do Next
+    Number each step using this EXACT format (bold title, em-dash, detail):
+
+    1. **[Short action]** — [One plain sentence: what to do, where to go, or what to prepare.]
+    2. **[Next action]** — [...]
+
+    Start from where the person is now (already inside the Philippines, or
+    arriving from abroad). Keep steps short and actionable.
+
+    ---
+    ### 🔄 Alternatives to Consider
+    List 1–2 alternative visa types in case the top pick is unavailable or
+    the person does not qualify. One sentence per alternative explaining
+    why it could apply.
+
+    ---
+    ### 🏢 BI Transactions You Will Need
+    List up to 5 of the most relevant Citizen's Charter transactions you
+    found, with a one-sentence note on what each covers.
+
+    ---
+    ### ⚠️ Important Reminders
+    Add 2–4 critical points specific to this person's situation (e.g.
+    ACR I-Card requirement for stays over 59 days, work permit if employed,
+    nationality-specific restrictions, Annual Report obligation).
+
+    ──────────────────────────────────────────
+    IMPORTANT RULES
+    ──────────────────────────────────────────
+    - Spell out every acronym on first use (e.g. ACR I-Card, ECC, BI).
+    - If the person's nationality qualifies for visa-free entry, say so.
+    - Do NOT invent fees, durations, or rules you are not certain of.
+      Use "Verify current rates with BI" when amounts may change.
+    - Acknowledge when the answer depends on bilateral agreements and
+      direct the user to confirm with BI or an immigration attorney.
+    - Tone: warm, clear, and reassuring. This person is making an
+      important decision about living in the Philippines.
+
+    ──────────────────────────────────────────
+    LANGUAGE
+    ──────────────────────────────────────────
+    Write the ENTIRE recommendation in {language}.
+    Keep official names (e.g. "ACR I-Card", "ECC", visa section numbers) in
+    English, but translate all explanations, headings, and tips into {language}.
+    If the language is English, just write normally.
+
+  expected_output: >
+    A Markdown-formatted personalised visa recommendation with these
+    sections: summary headline, Top Pick (visa name + why it fits),
+    About This Visa table, What to Do Next (numbered steps), Alternatives
+    to Consider, BI Transactions You Will Need, and Important Reminders.
+
+  agent: visa_rec_agent

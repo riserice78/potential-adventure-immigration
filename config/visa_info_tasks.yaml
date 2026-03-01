@@ -1,0 +1,75 @@
+visa_info_task:
+  description: >
+    A foreign national wants detailed information about this Philippine visa
+    type: "{visa_type}"
+
+    Use the search_transactions tool to find Bureau of Immigration Citizen's
+    Charter transactions relevant to this visa. Then write a complete guide
+    using the exact sections below.
+
+    ──────────────────────────────────────────
+    REQUIRED SECTIONS (use these exact headers)
+    ──────────────────────────────────────────
+
+    ## [Official visa name — e.g. "9(a) Tourist Visa / Temporary Visitor's Visa"]
+    *[One plain sentence: what this visa is and who typically uses it.]*
+
+    ---
+    ### 🪪 Visa at a Glance
+    | | |
+    |---|---|
+    | 📋 **Visa section** | [e.g. "Section 9(a) of the Philippine Immigration Act of 1940"] |
+    | ⏳ **Initial validity** | [How long the first grant lasts, e.g. "30 days on arrival for most nationalities; 59 days for some"] |
+    | 🔁 **Can be extended?** | [Yes / No. If yes: how many extensions, how long each, max cumulative stay] |
+    | 👤 **Who qualifies** | [Plain description of who can get this visa] |
+    | 💰 **Typical fees** | [Give approximate amounts from your knowledge; note "Verify current rates with BI"] |
+    | 🌏 **Nationality notes** | [Any nationality-specific rules — e.g. visa-free access, restricted nationalities] |
+
+    ---
+    ### 📌 How to Keep This Visa Valid
+    Explain in plain language what the holder must do to stay in legal status.
+    Cover all of the following that apply:
+
+    - How and how often to extend (where to go, what to bring)
+    - ACR I-Card (Alien Certificate of Registration Identity Card)
+      requirement — state the stay threshold that triggers this (typically
+      59 days cumulative) and what to do
+    - Annual Report requirement for registered aliens (if applicable)
+    - Any work, study, or activity restrictions on this visa type
+    - What happens if the visa lapses or the holder overstays
+
+    ---
+    ### ⚠️ Common Mistakes to Avoid
+    List 3–5 practical warnings specific to this visa (e.g. missing the ACR
+    I-Card deadline, not extending before expiry, confusing the visa validity
+    with the authorised stay).
+
+    ---
+    ### 🏢 Related BI Transactions
+    List up to 6 of the most relevant Citizen's Charter transactions you
+    found. For each, write one sentence describing what it covers.
+
+    ──────────────────────────────────────────
+    IMPORTANT RULES
+    ──────────────────────────────────────────
+    - Spell out every acronym on first use.
+    - Use "as of our last charter update" for any fee or duration that may
+      change. Say "Verify with BI" whenever you are uncertain.
+    - Do NOT copy long verbatim blocks from the charter — paraphrase.
+    - Tone: warm, clear, and reassuring. The reader is likely stressed.
+
+    ──────────────────────────────────────────
+    LANGUAGE
+    ──────────────────────────────────────────
+    Write the ENTIRE guide in {language}.
+    Keep official names (e.g. "ACR I-Card", "ECC", visa section numbers) in
+    English, but translate all explanations, headings, and tips into {language}.
+    If the language is English, just write normally.
+
+  expected_output: >
+    A Markdown-formatted visa information guide with these sections:
+    official visa title, Visa at a Glance table, How to Keep This Visa
+    Valid, Common Mistakes to Avoid, and Related BI Transactions from the
+    Citizen's Charter.
+
+  agent: visa_info_agent

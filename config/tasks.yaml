@@ -1,0 +1,101 @@
+get_requirements_task:
+  description: >
+    A citizen wants to avail this government transaction: "{transaction}"
+
+    Use the get_transaction_detail tool to retrieve the full charter text,
+    then rewrite it as a plain-language guide using the format below.
+
+    ──────────────────────────────────────────
+    FORMATTING RULES (follow these strictly)
+    ──────────────────────────────────────────
+
+    1. PLAIN LANGUAGE FIRST
+       - Rewrite every requirement and step in plain, conversational Filipino-
+         English. Avoid copying legalese verbatim from the charter.
+       - Spell out every acronym on first use, e.g.:
+         "PSA (Philippine Statistics Authority)"
+         "ACR I-Card (Alien Certificate of Registration Identity Card)"
+         "ECC (Emigration Clearance Certificate)"
+       - Convert passive voice to active: "shall be submitted" → "you submit"
+       - Replace "aforementioned" / "herein" / "pursuant to" with plain words.
+
+    2. REQUIRED SECTIONS — use these exact headers and emojis:
+
+    ## [Full official transaction name]
+    *[One sentence: what this transaction does, in plain words. Who needs it
+    and why. Do not copy from the charter — write it fresh.]*
+
+    ---
+    ### ⚡ Quick Look
+    | | |
+    |---|---|
+    | ⏱️ **Processing time** | [e.g. "1 working day" or "Not stated"] |
+    | 💰 **Total fees** | [e.g. "PHP 500" or "Free"] |
+    | 🏢 **Where to go** | [Office / division name] |
+    | 👤 **Who can apply** | [Plain description] |
+
+    ---
+    ### 📋 What You Need to Bring
+
+    Group requirements by applicant type if the charter separates them
+    (e.g. "If you are applying personally", "If filing through a
+    representative", "For minors", etc.). Use bold for document names.
+
+    For each document, write:
+    **[Document name]** — [one plain sentence: what it is]
+    - Copies: [e.g. "1 original + 1 photocopy"]
+    - Where to get it: [e.g. "PSA (Philippine Statistics Authority) office
+      or PSAHelpline.ph"]
+
+    If the charter says any requirement is conditional (marked ** or "if
+    applicable"), label it clearly: *(required only if [condition])*
+
+    ---
+    ### 💸 Fees
+    List every fee as a bullet. If multiple fees apply, add a **Total** line.
+    Write "Free / No fees" if none apply.
+
+    ---
+    ### 👣 Step-by-Step
+    Number each step using this EXACT format (bold title, em-dash, detail):
+
+    1. **[Short action]** — [One plain sentence: what the citizen does or what
+       the agency does. Include wait time only if stated in the charter.]
+    2. **[Next action]** — [...]
+
+    Do NOT use sub-bullets inside steps. Keep each step to 1–2 sentences.
+
+    ---
+    ### 💡 Good to Know
+    Add 2–5 practical tips drawn only from information in the charter. Include:
+    - Any warnings about incomplete documents
+    - Anything that surprises first-timers (e.g. a step that takes
+      significantly longer, a fee that is easy to miss)
+    - What happens if something is missing or rejected
+    Leave this section out if the charter contains no useful additional info.
+
+    ──────────────────────────────────────────
+    IMPORTANT RULES
+    ──────────────────────────────────────────
+    - Do NOT invent requirements, fees, or steps not in the charter.
+    - Do NOT copy long verbatim blocks from the charter — always paraphrase.
+    - If a piece of information is missing from the charter, write
+      "Not stated in the charter" rather than guessing.
+    - Use Markdown formatting (bold, tables, numbered lists, bullet points).
+
+    ──────────────────────────────────────────
+    LANGUAGE
+    ──────────────────────────────────────────
+    Write the ENTIRE guide in {language}.
+    Keep official document names (e.g. "ACR I-Card", "ECC") in English, but
+    translate all explanations, headings, and tips into {language}.
+    If the language is English, just write normally.
+
+  expected_output: >
+    A Markdown-formatted plain-language guide with the sections: transaction
+    title + one-sentence description, Quick Look summary table, What You Need
+    to Bring (grouped by applicant type), Fees, Step-by-Step procedure, and
+    Good to Know tips. Written in warm, clear, jargon-free Filipino-English
+    that a first-time applicant can follow without assistance.
+
+  agent: requirements_agent

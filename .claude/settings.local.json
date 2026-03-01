@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(claude-developer-platform)",
+      "Skill(claude-developer-platform:*)",
+      "Bash(python3 -m pip:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(ln:*)",
+      "Bash(tee:*)",
+      "Bash(pip3 show streamlit)"
+    ]
+  }
+}
