@@ -49,18 +49,19 @@ TRANSLATIONS: dict[str, dict[str, str]] = {
     },
     "sidebar_about_text": {
         "en": (
-            "This assistant reads the **Citizen's Charter** of a government "
-            "agency and tells you exactly what documents to bring, where to "
-            "go, and how much to pay for any transaction."
+            "This assistant reads the **Citizen's Charter** of the Bureau of Immigaration of the Philippines. "
+            "It assists you in what documents to bring, where to go, and how much to pay for any transaction."
+            "Please note that there may be inconsistencies between the Citizen's Charter and the actual procedures of the agency."
         ),
         "ja": (
-            "このアシスタントは政府機関の**市民憲章**を読み取り、"
-            "必要な書類、行き先、手数料を正確にお伝えします。"
+            "このアシスタントは、フィリピン入国管理局の**市民憲章（Citizen's Charter）**を読み取ります。"
+            "各種手続きに必要な書類、窓口の場所、料金についてご案内いたします。"
+            "なお、市民憲章の内容と実際の手続きが異なる場合がありますのでご了承ください。"
         ),
         "tl": (
-            "Binabasa ng assistant na ito ang **Citizen's Charter** ng ahensya ng "
-            "gobyerno at sasabihin sa iyo kung anong mga dokumento ang dapat dalhin, "
-            "saan pupunta, at magkano ang babayaran."
+            "Binabasa ng assistant na ito ang **Citizen's Charter** ng Bureau of Immigration ng Pilipinas. "
+            "Tutulong ito sa iyo tungkol sa mga dokumentong dapat dalhin, kung saan pupunta, at magkano ang babayaran sa anumang transaksyon. "
+            "Pakitandaan na maaaring may mga pagkakaiba sa pagitan ng Citizen's Charter at sa aktwal na proseso ng ahensya."
         ),
     },
     "sidebar_index_info": {
