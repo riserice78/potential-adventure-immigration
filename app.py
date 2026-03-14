@@ -33,7 +33,7 @@ INDEX_PATH = Path(__file__).parent / "transactions_index.json"
 
 # Base URL for PDF links — served from Cloudflare R2 so the browser's native
 # PDF viewer opens them directly (supports #page=N deep linking).
-_PDF_BASE = "https://pub-1464719f00464e5a84fe43e4150370d2.r2.dev"
+_PDF_BASE = "https://transactions-ph.com"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
