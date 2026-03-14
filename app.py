@@ -407,24 +407,24 @@ def render_sidebar(index: dict) -> None:
             st.markdown(f"{t('sidebar_built')} {meta.get('built_at', meta.get('migrated_at', '—'))[:10]}")
 
         st.divider()
-        st.markdown(t("sidebar_rebuild"))
-        st.code(
-            "# Build per-charter index\n"
-            "python scripts/build_index.py \\\n"
-            "  --pdf citizenscharters/<file>.pdf\n\n"
-            "# Merge all charters\n"
-            "python scripts/merge_indexes.py",
-            language="bash",
-        )
+        #st.markdown(t("sidebar_rebuild"))
+        #st.code(
+        #    "# Build per-charter index\n"
+        #    "python scripts/build_index.py \\\n"
+        #    "  --pdf citizenscharters/<file>.pdf\n\n"
+        #    "# Merge all charters\n"
+        #    "python scripts/merge_indexes.py",
+        #    language="bash",
+        #)
 
-        if st.button(t("sidebar_clear_cache"), use_container_width=True):
-            load_index.clear()
-            fetch_candidates.clear()
-            fetch_requirements.clear()
-            fetch_letter_draft.clear()
-            fetch_visa_info.clear()
-            fetch_visa_recommendation.clear()
-            st.success(t("sidebar_cache_cleared"))
+        #if st.button(t("sidebar_clear_cache"), use_container_width=True):
+        #    load_index.clear()
+        #    fetch_candidates.clear()
+        #    fetch_requirements.clear()
+        #    fetch_letter_draft.clear()
+        #    fetch_visa_info.clear()
+        #    fetch_visa_recommendation.clear()
+        #    st.success(t("sidebar_cache_cleared"))
 
 
 # ── Step 1: Input ─────────────────────────────────────────────────────────────
