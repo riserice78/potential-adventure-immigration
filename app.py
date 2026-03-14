@@ -31,12 +31,9 @@ load_dotenv()
 
 INDEX_PATH = Path(__file__).parent / "transactions_index.json"
 
-# Base URL for PDF links — GitHub's built-in PDF viewer handles large files
-# reliably, unlike Streamlit's static file serving on Community Cloud.
-_GITHUB_PDF_BASE = (
-    "https://github.com/riserice78/potential-adventure-immigration"
-    "/blob/main/static"
-)
+# Base URL for PDF links — served from Cloudflare R2 so the browser's native
+# PDF viewer opens them directly (supports #page=N deep linking).
+_PDF_BASE = "https://pub-1464719f00464e5a84fe43e4150370d2.r2.dev"
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -509,7 +506,7 @@ def render_step2(index: dict) -> None:
                     # Use per-transaction source_pdf (works across multiple charters)
                     pdf_filename = full_txn.get("source_pdf", "")
                     if pdf_filename:
-                        pdf_url = f"{_GITHUB_PDF_BASE}/{pdf_filename}"
+                        pdf_url = f"{_PDF_BASE}/{pdf_filename}#page={page}"
                         st.markdown(
                             f'<a href="{pdf_url}" target="_blank" '
                             f'style="font-size:0.8rem;color:#6b7280;text-decoration:none;">'
@@ -892,7 +889,7 @@ def render_step3() -> None:
 
         st.divider()
         if source_pdf and start_page:
-            pdf_url = f"{_GITHUB_PDF_BASE}/{source_pdf}"
+            pdf_url = f"{_PDF_BASE}/{source_pdf}#page={start_page}"
             st.markdown(
                 f'<p style="font-size:0.82rem;color:#6b7280;margin:0;">'
                 f'📄 <strong>Source:</strong> {charter}'
